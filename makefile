@@ -21,6 +21,12 @@ be-build:
 be-run:
 	cd $(BACKEND_DIR) && dotnet run
 
+be-install:
+	cd $(BACKEND_DIR) && dotnet restore
+
+# Global commands
+install: fe-install be-install
+
 # Default target
 all: fe-install be-build be-build
 
