@@ -3,9 +3,9 @@ using backend.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-[ApiController]
-[Route("api/[controller]")]
-public class UsersController : ControllerBase  {
+namespace backend.Controllers;
+
+public class UsersController : BaseController  {
   private readonly DataContext _context;
   public UsersController(DataContext context) {
     _context = context; 
