@@ -478,3 +478,5 @@ $RECYCLE.BIN/
 
 ./bin/
 ./obj/
+*.db
+*.db*
