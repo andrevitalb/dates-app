@@ -18,6 +18,9 @@ be-start:
 be-build:
 	cd $(BACKEND_DIR) && dotnet build
 
+be-db:
+	cd $(BACKEND_DIR) && dotnet ef database update
+
 be-run:
 	cd $(BACKEND_DIR) && dotnet run
 
@@ -25,8 +28,8 @@ be-install:
 	cd $(BACKEND_DIR) && dotnet restore
 
 # Global commands
-install: fe-install be-install
+install: fe-install be-install be-db
 
 # Default target
-all: fe-install be-build be-build
+all: fe-install be-build
 
