@@ -1,0 +1,12 @@
+.dropdown {
+	button {
+		border: none;
+		outline: none;
+		background-color: transparent;
+	}
+
+	&-toggle,
+	&-item {
+		cursor: pointer;
+	}
+}
