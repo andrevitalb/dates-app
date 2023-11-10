@@ -1,4 +1,4 @@
-import { HttpClientModule } from "@angular/common/http"
+import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http"
 import { NgModule } from "@angular/core"
 import { FormsModule } from "@angular/forms"
 import { BrowserModule } from "@angular/platform-browser"
@@ -12,6 +12,7 @@ import { MemberListComponent } from "components/members/member-list/member-list.
 import { MessagesComponent } from "components/messages/messages.component"
 import { NavComponent } from "components/nav/nav.component"
 import { RegisterComponent } from "components/register/register.component"
+import { ErrorInterceptor } from "interceptors/error.interceptor"
 import { SharedModule } from "modules/shared.module"
 import { TestErrorComponent } from "./errors/test-error/test-error.component"
 
@@ -35,7 +36,13 @@ import { TestErrorComponent } from "./errors/test-error/test-error.component"
 		FormsModule,
 		SharedModule,
 	],
-	providers: [],
+	providers: [
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: ErrorInterceptor,
+			multi: true,
+		},
+	],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}
