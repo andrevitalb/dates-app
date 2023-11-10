@@ -14,6 +14,8 @@ import { NavComponent } from "components/nav/nav.component"
 import { RegisterComponent } from "components/register/register.component"
 import { ErrorInterceptor } from "interceptors/error.interceptor"
 import { SharedModule } from "modules/shared.module"
+import { NotFoundComponent } from "./errors/not-found/not-found.component"
+import { ServerErrorComponent } from "./errors/server-error/server-error.component"
 import { TestErrorComponent } from "./errors/test-error/test-error.component"
 
 @NgModule({
@@ -27,6 +29,8 @@ import { TestErrorComponent } from "./errors/test-error/test-error.component"
 		ListsComponent,
 		MessagesComponent,
 		TestErrorComponent,
+		NotFoundComponent,
+		ServerErrorComponent,
 	],
 	imports: [
 		BrowserModule,
