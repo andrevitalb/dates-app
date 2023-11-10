@@ -13,6 +13,7 @@ import { MessagesComponent } from "components/messages/messages.component"
 import { NavComponent } from "components/nav/nav.component"
 import { RegisterComponent } from "components/register/register.component"
 import { SharedModule } from "modules/shared.module"
+import { TestErrorComponent } from "./errors/test-error/test-error.component"
 
 @NgModule({
 	declarations: [
@@ -24,6 +25,7 @@ import { SharedModule } from "modules/shared.module"
 		MemberDetailComponent,
 		ListsComponent,
 		MessagesComponent,
+		TestErrorComponent,
 	],
 	imports: [
 		BrowserModule,
