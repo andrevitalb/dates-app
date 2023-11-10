@@ -12,8 +12,7 @@ import { MemberListComponent } from "components/members/member-list/member-list.
 import { MessagesComponent } from "components/messages/messages.component"
 import { NavComponent } from "components/nav/nav.component"
 import { RegisterComponent } from "components/register/register.component"
-import { BsDropdownModule } from "ngx-bootstrap/dropdown"
-import { ToastrModule } from "ngx-toastr"
+import { SharedModule } from "modules/shared.module"
 
 @NgModule({
 	declarations: [
@@ -32,13 +31,7 @@ import { ToastrModule } from "ngx-toastr"
 		HttpClientModule,
 		BrowserAnimationsModule,
 		FormsModule,
-		BsDropdownModule.forRoot(),
-		ToastrModule.forRoot({
-			timeOut: 10000,
-			positionClass: "toast-bottom-right",
-			preventDuplicates: true,
-			progressBar: true,
-		}),
+		SharedModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],
