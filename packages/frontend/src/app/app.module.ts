@@ -13,6 +13,7 @@ import { MessagesComponent } from "components/messages/messages.component"
 import { NavComponent } from "components/nav/nav.component"
 import { RegisterComponent } from "components/register/register.component"
 import { ErrorInterceptor } from "interceptors/error.interceptor"
+import { JwtInterceptor } from "interceptors/jwt.interceptor"
 import { SharedModule } from "modules/shared.module"
 import { NotFoundComponent } from "./errors/not-found/not-found.component"
 import { ServerErrorComponent } from "./errors/server-error/server-error.component"
@@ -44,6 +45,11 @@ import { TestErrorComponent } from "./errors/test-error/test-error.component"
 		{
 			provide: HTTP_INTERCEPTORS,
 			useClass: ErrorInterceptor,
+			multi: true,
+		},
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: JwtInterceptor,
 			multi: true,
 		},
 	],
