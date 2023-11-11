@@ -15,6 +15,7 @@ import { RegisterComponent } from "components/register/register.component"
 import { ErrorInterceptor } from "interceptors/error.interceptor"
 import { JwtInterceptor } from "interceptors/jwt.interceptor"
 import { SharedModule } from "modules/shared.module"
+import { MemberCardComponent } from "./components/members/member-card/member-card.component"
 import { NotFoundComponent } from "./errors/not-found/not-found.component"
 import { ServerErrorComponent } from "./errors/server-error/server-error.component"
 import { TestErrorComponent } from "./errors/test-error/test-error.component"
@@ -32,6 +33,7 @@ import { TestErrorComponent } from "./errors/test-error/test-error.component"
 		TestErrorComponent,
 		NotFoundComponent,
 		ServerErrorComponent,
+		MemberCardComponent,
 	],
 	imports: [
 		BrowserModule,
