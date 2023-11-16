@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+.tab-pane {
+	padding: 1rem;
+	border-radius: 4px;
+}
+
+.member-tabs {
+	.nav-tabs {
+		li {
+			&:hover,
+			&.active {
+				border-bottom: 2.5px solid #593196;
+
+				a {
+					border: 0;
+				}
+			}
+		}
+	}
+
+	.tab-content {
+		padding: 15px 0;
+	}
+}
+
+.gallery {
+	height: 550px;
+}
