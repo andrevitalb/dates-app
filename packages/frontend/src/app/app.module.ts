@@ -7,7 +7,6 @@ import { AppRoutingModule } from "app-routing.module"
 import { AppComponent } from "app.component"
 import { HomeComponent } from "components/home/home.component"
 import { ListsComponent } from "components/lists/lists.component"
-import { MemberDetailComponent } from "components/members/member-detail/member-detail.component"
 import { MemberListComponent } from "components/members/member-list/member-list.component"
 import { MessagesComponent } from "components/messages/messages.component"
 import { NavComponent } from "components/nav/nav.component"
@@ -27,7 +26,6 @@ import { TestErrorComponent } from "./errors/test-error/test-error.component"
 		HomeComponent,
 		RegisterComponent,
 		MemberListComponent,
-		MemberDetailComponent,
 		ListsComponent,
 		MessagesComponent,
 		TestErrorComponent,
