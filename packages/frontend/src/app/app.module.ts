@@ -7,13 +7,14 @@ import { AppRoutingModule } from "app-routing.module"
 import { AppComponent } from "app.component"
 import { HomeComponent } from "components/home/home.component"
 import { ListsComponent } from "components/lists/lists.component"
-import { MemberDetailComponent } from "components/members/member-detail/member-detail.component"
 import { MemberListComponent } from "components/members/member-list/member-list.component"
 import { MessagesComponent } from "components/messages/messages.component"
 import { NavComponent } from "components/nav/nav.component"
 import { RegisterComponent } from "components/register/register.component"
 import { ErrorInterceptor } from "interceptors/error.interceptor"
+import { JwtInterceptor } from "interceptors/jwt.interceptor"
 import { SharedModule } from "modules/shared.module"
+import { MemberCardComponent } from "./components/members/member-card/member-card.component"
 import { NotFoundComponent } from "./errors/not-found/not-found.component"
 import { ServerErrorComponent } from "./errors/server-error/server-error.component"
 import { TestErrorComponent } from "./errors/test-error/test-error.component"
@@ -25,12 +26,12 @@ import { TestErrorComponent } from "./errors/test-error/test-error.component"
 		HomeComponent,
 		RegisterComponent,
 		MemberListComponent,
-		MemberDetailComponent,
 		ListsComponent,
 		MessagesComponent,
 		TestErrorComponent,
 		NotFoundComponent,
 		ServerErrorComponent,
+		MemberCardComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -44,6 +45,11 @@ import { TestErrorComponent } from "./errors/test-error/test-error.component"
 		{
 			provide: HTTP_INTERCEPTORS,
 			useClass: ErrorInterceptor,
+			multi: true,
+		},
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: JwtInterceptor,
 			multi: true,
 		},
 	],
