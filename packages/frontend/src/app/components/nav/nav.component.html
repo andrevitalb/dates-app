@@ -32,7 +32,7 @@
 				Bienvenido {{ user.username | titlecase }}
 			</button>
 			<div class="dropdown-menu" *dropdownMenu>
-				<a class="dropdown-item">Perfil</a>
+				<a class="dropdown-item" routerLink="/member/edit">Perfil</a>
 				<a class="dropdown-item" (click)="logout()">Salir</a>
 			</div>
 		</div>
