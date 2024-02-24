@@ -1,4 +1,5 @@
 using AutoMapper;
+using System.Security.Claims;
 using backend.DTOs;
 using backend.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -28,5 +29,17 @@ public class UsersController : BaseController  {
     var user = await _userRepository.GetUserByUsernameAsync(username);
 
     return _mapper.Map<MemberDto>(user);
+  }
+
+  [HttpPut]
+  public async Task<ActionResult> UpdateUser(MemberUpdateDto memberUpdateDto) {
+    var username = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+    var user = await _userRepository.GetUserByUsernameAsync(username);
+    _mapper.Map(memberUpdateDto, user);
+    _userRepository.Update(user);
+
+    if (await _userRepository.SaveAllAsync()) return NoContent();
+
+    return BadRequest("No se pudo realizar la operación");
   }
 }
